@@ -1,0 +1,48 @@
+@spacingType: {
+  m: margin;
+  p: padding;
+};
+
+@spacingDirections: {
+  t: top;
+  r: right;
+  b: bottom;
+  l: left;
+};
+
+@spacingBaseSize: 16px;
+@spacingSizes: {
+  0: 0;
+  xs: 0.5;
+  sm: 1;
+  md: 1.5;
+  lg: 2;
+  xl: 3;
+};
+
+each(@spacingType, .(@typeVal, @typeKey, @typeIndex){
+   each(@spacingDirections, .(@dirVal, @dirKey, @dirIdx) {
+       each(@spacingSizes, {
+           .@{typeKey}@{dirKey}-@{key} {
+               @{typeVal}-@{dirVal}: @value * @spacingBaseSize;
+           }
+       })
+   })
+})
+
+@layoutTypes: {
+    float: float;
+    text: text-align;
+}
+
+
+
+@layoutValues: right, left;
+
+each(@layoutTypes, .(@typeVal, @typeKey, @typeIndex) {
+    each(@layoutValues,  {
+        .@{typeKey}-@{value} {
+            @{typeVal}: @value;
+        }
+    })
+})

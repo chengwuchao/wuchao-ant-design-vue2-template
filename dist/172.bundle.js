@@ -1,0 +1,1 @@
+(self.webpackChunkvue_webpack=self.webpackChunkvue_webpack||[]).push([[172],{3172:function(e,u,n){"use strict";n.r(u);var l=(0,n(2236).Z)(null,undefined,undefined,!1,null,null,null);l.options.__file="src/views/suppiler/index.vue",u.default=l.exports}}]);
